@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="styles.css">
+
+    <title>Elderly</title>
+     <!-- Adicionando jQuery -->
+     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    
+     <!-- Adicionando jQuery Mask Plugin -->
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.min.js"></script>
+     
+</head>
+
+<body>
+     <!-- Cabeçalho de informações do sistema -->
+    <header>
+        <div class="title">
+            <h1>Cadastro de Idosos</h1>
+        </div>
+        <div class="banner">
+            <img src="img/capaTcc.jpg"
+                alt="CapaTcc" width="150">
+        </div>
+    </header>
+
+     <!-- Opções para adicionar um novo item -->
+    <section class="newItem">
+        <div class="form-group">
+            <label for="nome">Nome:</label>
+            <input type="text" id="nome" name="nome" size="30" placeholder="Nome do idoso" required>
+            <span class="error" id="nomeError">*</span><br><br>
+        </div>
+
+        <div class="form-group">
+            <label for="cpf">CPF:</label>
+            <input type="text" id="cpf" name="cpf" size="11" placeholder="000.000.000-00" required>
+            <span class="error" id="cpfError">*</span><br><br>
+        </div>
+
+        <div class="form-group">
+            <label for="idade">Idade:</label>
+            <input type="number" id="idade" name="idade" size="3" placeholder="Idade do idoso" required>
+            <span class="error" id="idadeError">*</span><br><br>
+        </div>
+
+        <div class="form-group">
+            <label for="responsavel">Responsável:</label>
+            <input type="text" id="responsavel" name="responsavel" size="30" placeholder="Nome do responsável pelo idoso" required>
+            <span class="error" id="responsavelError">*</span><br><br>
+        </div>
+
+        <div class="form-group">
+            <label for="numResponsavel">Número Responsável:</label>
+            <input type="text" id="celular" name="celular" size="10" placeholder="(00) 00000-0000" placeholder="Númerdo de contato do responsável pelo idoso"required>
+            <span class="error" id="celularError">*</span><br><br>
+        </div>
+
+        <div class="form-group">
+            <button onclick="newItem()" class="addBtn">Adicionar</button>
+        </div>
+
+        <script>
+            // Aplicando as máscaras
+            $(document).ready(function(){
+                $('#celular').mask('(00) 00000-0000');  // Máscara para telefone
+                $('#cpf').mask('000.000.000-00');        // Máscara para CPF
+            });
+        </script>
+        
+
+       <!-- <input type="text" id="newInput" placeholder="Adicionar novo item:">-->
+       <!-- <input type="text" id="newQuantity" placeholder="Quantidade:">-->
+        <!--<input type="text" id="newPrice" placeholder="Valor:">-->
+        
+        
+    </section>
+
+    <!-- Tabela com items existentes -->
+    <section class="items">
+        <table id="myTable">
+            <tr>
+                <th>Nome</th>
+                <th>CPF</th>
+                <th>Idade</th>
+                <th>Responsável</th>
+                <th>Número Responsável</th>
+                <th><img src="https://cdn-icons-png.flaticon.com/512/126/126468.png" width="15px" height="15px"></th>
+            </tr>
+        </table>
+    </section>
+
+    <script src="scripts.js"></script>
+</body>
+
+</html>
+
+
